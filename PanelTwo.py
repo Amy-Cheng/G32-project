@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, QtGui, QtCore, QtWebEngineWidgets
-from Panel2 import Ui_Panel2
+from panel.panel2 import Ui_Panel2
 import sys
 
 
