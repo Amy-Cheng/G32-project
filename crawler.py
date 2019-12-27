@@ -25,20 +25,28 @@ for i in range(len(slist)):
     else:
         df = pdr.DataReader(sid + '.TW', 'yahoo', start=start)
 
-    df.index = df.index.format(formatter=lambda x: x.strftime('%Y-%m-%d')) 
+    df.index = df.index.format(formatter=lambda x: x.strftime('%Y-%m-%d'))
 
     sma_20 = talib.SMA(np.array(df['Close']), 20)
     sma_60 = talib.SMA(np.array(df['Close']), 60)
     sma_120 = talib.SMA(np.array(df['Close']), 120)
     sma_240 = talib.SMA(np.array(df['Close']), 240)
 
+    # 判斷是否剛突破20MA
+    print(df.iloc[-1, 3], df.iloc[-2, 3])
+    print(sma_20[-1])
+    if df.iloc[-2, 3] <= sma_20[-1] and df.iloc[-1, 3] > sma_20[-1]:
+        print(sid + "是否剛突破20MA?: " + "是")
+    else:
+        print(sid + "是否剛突破20MA?: " + "否")
+
     fig = plt.figure(figsize=(24, 15))
-    
+
     #用add_axes創建副圖框
     ax = fig.add_axes([0.03,0.4,0.95,0.5]) #左下角座標 (0.03,0.4)，右上角座標 (0.95,0.5)
-    plt.title(sid, fontsize='x-large')    
+    plt.title(sid, fontsize='x-large')
     ax2 = fig.add_axes([0.03,0.15,0.95,0.2]) #左下角座標 (0.03,0.15)，右上角座標 (0.95,0.2)
-    
+
     # ax.set_xticks(range(0, len(df.index), 10))
     # ax.set_xticklabels(df.index[::10])
     mpf.candlestick2_ochl(ax, df['Open'], df['Close'], df['High'],
@@ -49,10 +57,10 @@ for i in range(len(slist)):
     ax.plot(sma_120, label='120MA')
     ax.plot(sma_240, label='240MA')
 
-    mpf.volume_overlay(ax2, df['Open'], df['Close'], df['Volume'], colorup='r', colordown= 'g', width=0.5, alpha=0.8)    
+    mpf.volume_overlay(ax2, df['Open'], df['Close'], df['Volume'], colorup='r', colordown= 'g', width=0.5, alpha=0.8)
     ax2.set_xticks(range(0, len(df.index), 10))
-    ax2.set_xticklabels(df.index[::10], rotation = 45)    
-    
+    ax2.set_xticklabels(df.index[::10], rotation = 45)
+
     ax.legend(loc='best', shadow=True, fontsize='x-large')
 
     plt.show()
