@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ControlPanel.ui'
+#
+# Created by: PyQt5 UI code generator 5.12
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1920, 1080)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(10, 10, 1891, 1021))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.verticalLayout.setSpacing(10)
+        self.verticalLayout.setObjectName("verticalLayout")
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout.addItem(spacerItem)
+        self.pushButton1 = QtWidgets.QPushButton(self.layoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton1.sizePolicy().hasHeightForWidth())
+        self.pushButton1.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("標楷體")
+        font.setPointSize(12)
+        self.pushButton1.setFont(font)
+        self.pushButton1.setObjectName("pushButton1")
+        self.verticalLayout.addWidget(self.pushButton1)
+        self.pushButton2 = QtWidgets.QPushButton(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("標楷體")
+        font.setPointSize(12)
+        self.pushButton2.setFont(font)
+        self.pushButton2.setObjectName("pushButton2")
+        self.verticalLayout.addWidget(self.pushButton2)
+        self.pushButton3 = QtWidgets.QPushButton(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("標楷體")
+        font.setPointSize(12)
+        self.pushButton3.setFont(font)
+        self.pushButton3.setObjectName("pushButton3")
+        self.verticalLayout.addWidget(self.pushButton3)
+        self.pushButton4 = QtWidgets.QPushButton(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("標楷體")
+        font.setPointSize(12)
+        self.pushButton4.setFont(font)
+        self.pushButton4.setObjectName("pushButton4")
+        self.verticalLayout.addWidget(self.pushButton4)
+        self.pushButton5 = QtWidgets.QPushButton(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("標楷體")
+        font.setPointSize(12)
+        self.pushButton5.setFont(font)
+        self.pushButton5.setObjectName("pushButton5")
+        self.verticalLayout.addWidget(self.pushButton5)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout.addItem(spacerItem1)
+        self.horizontalLayout.addLayout(self.verticalLayout)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.verticalLayout_2.addItem(spacerItem2)
+        self.horizontalLayout.addLayout(self.verticalLayout_2)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1920, 25))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton1.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton2.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton3.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton4.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton5.setText(_translate("MainWindow", "PushButton"))
+
+
