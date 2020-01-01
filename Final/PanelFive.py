@@ -22,6 +22,10 @@ class PanelFive(QtWidgets.QMainWindow):
         stocks = [sid + " - " + DataProcessing.name_list[sid] for sid in stocks]
         self.ui.comboBox.addItems(stocks)
 
+        self.onlyInt = QtGui.QIntValidator()
+        self.ui.lineEdit.setValidator(self.onlyInt)
+        self.ui.lineEdit.setText("1")
+
         self.ui.pushButton.setText("展示")
         self.ui.pushButton.clicked.connect(self.buttonClicked)
 
