@@ -142,8 +142,9 @@ def chip_data(date1, sid):
     foreign_dealers = []
     investment_trust = []
     local_dealers= []
-    d1 = datetime(int(date1[0:4]), int(date1[4:6]), int(date1[6:]))
-    d2 = d1 + timedelta(days = -1)
+
+    d1 = datetime.datetime(int(date1[0:4]), int(date1[4:6]), int(date1[6:]))
+    d2 = d1 + datetime.timedelta(days = -1)
     date_before = d2.strftime("%Y%m%d")
     x_axis = [d1.strftime("%Y%m%d")]
     # 重複執行直到7天的數據已經存放好
@@ -161,10 +162,10 @@ def chip_data(date1, sid):
                     y_axis.append(data.iloc[id, 4])
                     items += 1
                     x_axis.append(date_before)
-                    d2 = d2 + timedelta(days = -1)
+                    d2 = d2 + datetime.timedelta(days = -1)
                     date_before = d2.strftime("%Y%m%d")
         else:
-            d2 = d2 + timedelta(days = -1)
+            d2 = d2 + datetime.timedelta(days = -1)
             date_before = d2.strftime("%Y%m%d")
 
     # 將第一天掉換成最後一天，因x軸需要符合時間綫概念
@@ -184,12 +185,12 @@ def chip_data(date1, sid):
 # Panel4
 def ratios(sid, cat_rat):
 	# 匯入csv
-	df102 = pd.read_excel("ratio_data\\102ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df103 = pd.read_excel("ratio_data\\103ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df104 = pd.read_excel("ratio_data\\104ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df105 = pd.read_excel("ratio_data\\105ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df106 = pd.read_excel("ratio_data\\106ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df107 = pd.read_excel("ratio_data\\107ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df102 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\102ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df103 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\103ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df104 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\104ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df105 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\105ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df106 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\106ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df107 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\107ratios.xlsx", index_col = 0, encoding = "utf-8")
 
 	# 彙整各年度比率
 	Ratios = []
