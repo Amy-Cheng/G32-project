@@ -17,6 +17,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("G32")
+        app_icon = QtGui.QIcon()
+        app_icon.addFile('G32.png', QtCore.QSize(16,8))
+        self.setWindowIcon(app_icon)
 
         # 設定控制板切換按鈕名稱
         self.ui.pushButton1.setText("股票SMA")
