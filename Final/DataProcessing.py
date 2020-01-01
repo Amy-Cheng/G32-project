@@ -100,7 +100,7 @@ def chip_data(date1, sid):
     def workday(date):  # 判斷是否為工作日
         dtnb = {'response': 'json', 'date': date, 'selectType': 'ALLBUT0999', '_' : '1577233837182'}
         json_data = requests.get("https://www.twse.com.tw/fund/T86", dtnb).json()
-        if json_data == {'stat': '很抱歉，沒有符合條件的資料!'}:
+        if json_data == {'stat': '很抱歉，沒有符合條件的資料!'} or json_data == {}:
             return False
         else:
             return json_data
@@ -185,12 +185,12 @@ def chip_data(date1, sid):
 # Panel4
 def ratios(sid, cat_rat):
 	# 匯入csv
-	df102 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\102ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df103 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\103ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df104 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\104ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df105 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\105ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df106 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\106ratios.xlsx", index_col = 0, encoding = "utf-8")
-	df107 = pd.read_excel("C:\\Users\\Chen-Hao\\Desktop\\107ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df102 = pd.read_excel("ratio_data\\102ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df103 = pd.read_excel("ratio_data\\103ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df104 = pd.read_excel("ratio_data\\104ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df105 = pd.read_excel("ratio_data\\105ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df106 = pd.read_excel("ratio_data\\106ratios.xlsx", index_col = 0, encoding = "utf-8")
+	df107 = pd.read_excel("ratio_data\\107ratios.xlsx", index_col = 0, encoding = "utf-8")
 
 	# 彙整各年度比率
 	Ratios = []
