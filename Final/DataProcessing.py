@@ -9,7 +9,7 @@ import pandas_datareader as pdr
 import mpl_finance as mpf
 import datetime as datetime
 import talib
-
+import time
 
 slist = [2330, 2317, 2454, 3008, 1301, 2412, 2891, 1303, 1216, 2882,
 		 2886, 1326, 2881, 3711, 2884, 2308, 2002, 2892, 1101, 2207,
@@ -99,7 +99,7 @@ def chip_data(date1, sid):
 
     def workday(date):  # 判斷是否為工作日
         dtnb = {'response': 'json', 'date': date, 'selectType': 'ALLBUT0999', '_' : '1577233837182'}
-        json_data = requests.get("https://www.twse.com.tw/fund/T86", dtnb).json()
+        json_data = requests.get("https://www.twse.com.tw/fund/T86", dtnb).json()        
         if json_data == {'stat': '很抱歉，沒有符合條件的資料!'} or json_data == {}:
             return False
         else:
@@ -164,9 +164,11 @@ def chip_data(date1, sid):
                     x_axis.append(date_before)
                     d2 = d2 + datetime.timedelta(days = -1)
                     date_before = d2.strftime("%Y%m%d")
+            time.sleep(3)
         else:
             d2 = d2 + datetime.timedelta(days = -1)
             date_before = d2.strftime("%Y%m%d")
+            time.sleep(5)
 
     # 將第一天掉換成最後一天，因x軸需要符合時間綫概念
     x_axis.reverse()
